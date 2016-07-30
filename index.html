@@ -1,21 +1,21 @@
-<!doctype html>
+---
+layout: default
+---
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<div class="home">
 
-  <title>Dennis Wambua</title>
-  <meta name="description" content="Dennis Wambua">
-  <meta name="author" content="Dennis Wambua">
+  <h1 class="page-heading">Posts</h1>
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<body>
-  <h1>Welcome</h1>
-</body>
-</html>
+</div>
